@@ -90,9 +90,11 @@ export default [
         minimize:true,
         sourceMap:true,
         modules:true,
-        inject: {insertAt : 'top'}
+        inject: {insertAt : 'top'},
+        extract:true
       }),
     ],
+    external: ['react', 'react-dom']
   },
   // DTS Bundler
   {
