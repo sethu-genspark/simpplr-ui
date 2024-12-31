@@ -87,8 +87,10 @@ export default [
       }),
       postcss({
         extensions: ['.css'],
-        inject: true,
-        extract: false,
+        minimize:true,
+        sourceMap:true,
+        modules:true,
+        inject: {insertAt : 'top'}
       }),
     ],
   },
@@ -100,5 +102,6 @@ export default [
       format: 'esm',
     },
     plugins: [dts()],
+    external: [/\.css$/]
   },
 ];
